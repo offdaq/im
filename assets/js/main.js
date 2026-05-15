@@ -73,15 +73,15 @@ function initHeroBackground() {
 
   video.addEventListener('error', useGifFallback, { once: true });
 
-  const tryPlay = () => {
-    video.play().catch(() => {});
+  const resumeOnGesture = () => {
+    const resume = () => {
+      video.play().catch(() => {});
+    };
+    window.addEventListener('touchstart', resume, { passive: true, capture: true, once: true });
+    window.addEventListener('click', resume, { capture: true, once: true });
   };
 
-  if (video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA) {
-    tryPlay();
-  } else {
-    video.addEventListener('canplay', tryPlay, { once: true });
-  }
+  video.play().catch(resumeOnGesture);
 }
 
 document.addEventListener('DOMContentLoaded', () => {
