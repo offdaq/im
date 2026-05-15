@@ -1,0 +1,118 @@
+{
+    "nav": {
+        "home": "Hovedside",
+        "about": "Om meg",
+        "resume": "CV"
+    },
+    "hero": {
+        "title": "Hvem er jeg?",
+        "subtitle": "mjau"
+    },
+    "about": {
+        "title": "Artøm Korniets",
+        "description": "Sykkelmekaniker & vedlikehold",
+        "city": "Harstad, Troms (Norge)",
+        "badge": "Om min jobb",
+        "bg1": "Brenner for MTB-teknologi",
+        "bg2": "Allsidig, men mest opptatt av sykkelindustrien og informasjonsteknologi (DevOps: Code. Configure. Deploy; utvikling på både klient- og tjenersiden).",
+        "bg3": "Jeg liker å reparere, vedlikeholde og montere sykler, og å hjelpe folk med problemene deres. Jeg er opptatt av renslighet og orden.",
+        "bikes": "Sykler montert",
+        "years": "År med erfaring",
+        "repaired": "Sykler reparert",
+        "worktime": "Arbeidstid (t)",
+        "avgtime": "Gj.snitt monteringstid (min)",
+        "updated": "Statistikk oppdatert:",
+        "details": {
+            "specialization": "Spesialisering",
+            "specializationtext": "Reparasjon og vedlikehold av sykler",
+            "experience": "År med erfaring",
+            "years": "år",
+            "educationtext": "Sveising: TIG / MIG",
+            "educationtext1": "Personalutvikling og bedriftsledelse"
+        },
+        "download": "Laste ned CV",
+        "chat": "Kontakt meg",
+        "lng": "Språk",
+        "lnglist": "Russisk, Ukrainsk, Engelsk, Norsk"
+    },
+    "skills": {
+        "subtitle": "Sykkelkompetanse",
+        "construction": "Rammer og gafler",
+        "structure": {
+            "frame": "Typer rammer og gafler",
+            "frame_desc": "Kunnskap om materialer, geometri og kompatibilitet",
+            "drivetrain": "Drivverk",
+            "drivetrain_desc": "Kranksett, kranklager, gir, kjeder og drev",
+            "brakes": "Bremsesystem",
+            "brakes_desc": "Skive- og V-bremser, hydrauliske og mekaniske"
+        },
+        "assembly": "Montering, service og reparasjon",
+        "maintain": {
+            "assembly": "Sykkelmontering",
+            "assembly_desc": "Korrekt tiltrekking av bolter, montering av komponenter",
+            "cleaning": "Vedlikehold og smøring av komponenter",
+            "cleaning_desc": "Rengjøring, smøring og kontroll av slitasje",
+            "repair": "Reparasjon og justering",
+            "repair_desc": "Justering av gir og bremser, retting av hjul"
+        }
+    },
+    "resume": {
+        "title": "CV",
+        "subtitle": "Der reisen aldri tar slutt",
+        "birthday": "Fødselsdato:",
+        "nationality": "Statsborgerskap: Ukraina",
+        "skills": "Profesjonelle ferdigheter",
+        "skillstext": "Jeg vet på hvilken måte jeg skal finne problemer og løse dem, fleksibel, strukturert, pålitelig og arbeidsom.",
+        "education": "Utdanning",
+        "experience": "Arbeidserfaring",
+        "contact": "Kontaktinformasjon",
+        "languages": "Språk",
+        "lang": {
+            "ua": "Ukrainsk",
+            "ru": "Russisk",
+            "en": "Engelsk",
+            "no": "Norsk"
+        },
+        "maintenance": "Tekniske ferdigheter",
+        "present": "nåværende",
+        "mntskills": {
+            "brakes": "Lufting av bremser",
+            "replacement": "Utskifting av komponenter",
+            "mech_issues": "Feilsøking av mekaniske problemer",
+            "component_wear": "Slitasjekontroll på komponenter"
+        },
+        "vocational": {
+            "title": "Yrkeserfaring",
+            "subtitle1": "Sykkelverksted og service",
+            "text1": "Vikarierer for en fulltidsansatt i verkstedet etter skoletid.",
+            "text2": "Jobber hovedsakelig med montering av sykler.",
+            "subtitle2": "Sykkelverksted",
+            "text3": "Jobbet som utplasert elev fra skolen.",
+            "text4": "Fikk ganske nyttig praksis i reparasjon og montering av moderne terrengsykler."
+        },
+        "list_education": {
+            "educationvg2": "Videregående skole VG2",
+            "mortarboard2": "Kjøretøy",
+            "place1": "Norge, Troms | Stangnes Rå videregående skole",
+            "educationvg2text": "Dokumentasjon og kvalitetskontroll, verksted – yrkesfaglig fordypning.",
+            "educationvg1": "Videregående skole VG1",
+            "mortarboard1": "Teknologi- og industrifag",
+            "educationvg1text": "Forbedret erfaring med sveising og motorbygging (skulle helst vært sykler 😰), studerte HMS og lokale lover.",
+            "education3": "Ledelse og bedriftsadministrasjon",
+            "mortarboard3": "Bachelor",
+            "place2": "Donetsk nasjonale universitet for økonomi og handel",
+            "education3text": "Organisering av arbeidsplass og prosesser, psykologi i personalarbeid, bedriftsøkonomi.",
+            "education4": "Sveisekurs",
+            "place3": "Høyskole",
+            "education4text": "Lærte grunnleggende sveising og bruk av lysbuesveising.",
+            "education5": "Skole",
+            "place4": "Donetsk videregående skole №140 trinn I-III",
+            "education5text": "Fullført 11 år med grunnutdanning."
+        },
+        "certifications": {
+            "title": "Sertifikater",
+            "no1": "Norsk språk – A2/B1",
+            "no2": "Seks måneders intensivkurs"
+        }
+    }
+}

@@ -1,0 +1,6 @@
+# Огромный исходник фона — на сайте используются webm/mp4
+assets/img/bg_site.gif
+
+# OS / редактор
+.DS_Store
+Thumbs.db
