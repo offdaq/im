@@ -139,6 +139,11 @@ h6 {
   transition: 0.3s;
 }
 
+#lang-switcher a.active {
+  color: var(--contrast-color);
+  background: var(--accent-color);
+}
+
 .header .social-links a:hover {
   color: var(--contrast-color);
   background: var(--accent-color);

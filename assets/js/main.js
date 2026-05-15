@@ -46,12 +46,9 @@ function updateContent() {
   // корректный атрибут lang в <html>
   document.documentElement.lang = ['ru', 'no'].includes(lang) ? lang : 'en';
 
-  // Подсветка активного переключателя
-  document.querySelectorAll('#lang-switcher a').forEach(link => {
-    const icon = link.querySelector('.lang-icon');
-    if (icon) {
-      icon.classList.toggle('active', link.dataset.lang === lang);
-    }
+  const uiLang = lang === 'ru' || lang === 'no' ? lang : 'en';
+  document.querySelectorAll('#lang-switcher a[data-lang]').forEach(link => {
+    link.classList.toggle('active', link.dataset.lang === uiLang);
   });
 }
 
@@ -84,20 +81,46 @@ function initHeroBackground() {
   video.play().catch(resumeOnGesture);
 }
 
+/**
+ * Язык по настройке «Языки» браузера (полный список и порядок важны).
+ * Раньше брали только navigator.languages[0] — у многих первым идёт en,
+ * даже если вторым указан русский («интерфейс на русском» не меняет первый слот автоматически).
+ * nb/nn нормализуем к no под ваш no.json.
+ */
+function detectPreferredLocaleFromBrowser() {
+  const normalizeBase = locale =>
+    String(locale || '')
+      .replace('_', '-')
+      .split('-')[0]
+      .toLowerCase();
+
+  const resolve = base => {
+    if (base === 'ru') return 'ru';
+    if (base === 'no' || base === 'nb' || base === 'nn') return 'no';
+    return null;
+  };
+
+  const list =
+    navigator.languages && navigator.languages.length
+      ? Array.from(navigator.languages)
+      : [navigator.language].filter(Boolean);
+
+  for (const raw of list) {
+    const code = resolve(normalizeBase(raw));
+    if (code) return code;
+  }
+  return null;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
   cacheOriginalTexts();
   initHeroBackground();
 
-  // 3. Определяем изначальный язык
-  let browserLang = navigator.languages
-    ? navigator.languages[0]
-    : navigator.language;
-  browserLang = browserLang.substr(0, 2).toLowerCase();
-
   const stored = localStorage.getItem('language');
-  const initialLang = stored && ['ru', 'no'].includes(stored)
-    ? stored
-    : (['ru', 'no'].includes(browserLang) ? browserLang : 'en');
+  const initialLang =
+    stored === 'ru' || stored === 'no'
+      ? stored
+      : detectPreferredLocaleFromBrowser() || 'en';
 
   // 4. Инициализируем i18next (только для ru/no)
   i18next
