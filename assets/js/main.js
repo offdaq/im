@@ -386,7 +386,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadStatsFromCSV() {
   try {
     // 1) Подтягиваем CSV (с «анти-кэш» параметром)
-    const response = await fetch('/assets/import.csv?t=' + Date.now());
+    const response = await fetch(`assets/import.csv?t=${Date.now()}`);
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
     const text = await response.text();
 

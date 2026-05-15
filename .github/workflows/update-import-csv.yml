@@ -1,0 +1,47 @@
+# Периодически скачивает публичный экспорт Google Sheets в CSV и коммитит в репозиторий.
+# Таблица должна быть доступна для чтения по ссылке (например «Все, у кого есть ссылка»).
+#
+# Если репозиторий не в корне сайта и CSV лежит в im/assets/, поменяй OUTPUT_PATH ниже на im/assets/import.csv
+
+name: Update import.csv from Google Sheets
+
+on:
+  schedule:
+    # Каждый день в 06:00 UTC (~08:00 зимой в Норвегии). Свой интервал — https://crontab.guru
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-import-csv
+  cancel-in-progress: true
+
+jobs:
+  fetch-csv:
+    runs-on: ubuntu-latest
+    env:
+      SHEET_EXPORT_URL: "https://docs.google.com/spreadsheets/d/1gDbfGySh8IKZoWDTfO8slGmfmNxGp8-MsvoCPNCrB7M/export?format=csv"
+      OUTPUT_PATH: assets/import.csv
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Download CSV
+        run: |
+          mkdir -p "$(dirname "$OUTPUT_PATH")"
+          wget --no-verbose --tries=3 --timeout=60 \
+            --output-document="$OUTPUT_PATH" \
+            "$SHEET_EXPORT_URL"
+
+      - name: Commit and push if changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "$OUTPUT_PATH"
+          if git diff --staged --quiet; then
+            echo "No changes to import.csv"
+          else
+            git commit -m "chore: update import.csv from Google Sheets"
+            git push
+          fi
