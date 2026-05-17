@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
    */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
-    const MIN_SHOW_MS = 2500;
+    const MIN_SHOW_MS = 1800;
     const MAX_SHOW_MS = 10000;
     const startedAt = Date.now();
     let preloaderHidden = false;
