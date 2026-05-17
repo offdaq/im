@@ -814,7 +814,24 @@ section,
   }
 
   .hero .social-links {
+    display: grid;
+    grid-template-columns: repeat(4, 50px);
+    column-gap: 20px;
+    row-gap: 20px;
     justify-content: center;
+    width: fit-content;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* 4 иконки в первом ряду, 2 во втором — по центру */
+  .hero .social-links a:nth-child(5) {
+    grid-column: 2;
+  }
+
+  .hero .social-links a:nth-child(6) {
+    grid-column: 3;
   }
 
   .hero .hero-actions {
@@ -1590,6 +1607,42 @@ section,
 
 .resume .resume-section .resume-item .company i {
   margin-right: 0.5rem;
+}
+
+/* Бейджи сертификатов: колонка под свою картинку (как company-logo у работодателей) */
+.resume .resume-section .resume-item-media {
+  flex: 0 0 56px;
+  width: 56px;
+  min-height: 56px;
+  border-radius: 6px;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--accent-color), transparent 88%);
+}
+
+.resume .resume-section .resume-item-media a {
+  display: block;
+  line-height: 0;
+  border-radius: 6px;
+  transition: opacity 0.3s;
+}
+
+.resume .resume-section .resume-item-media a:hover {
+  opacity: 0.85;
+}
+
+.resume .resume-section .resume-item-media a:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+.resume .resume-section .resume-item-media .company-logo,
+.resume .resume-section .resume-item .company .company-logo {
+  display: block;
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+  border-radius: 6px;
+  vertical-align: middle;
 }
 
 .resume .resume-section .resume-item ul {

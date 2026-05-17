@@ -112,7 +112,12 @@
         "certifications": {
             "title": "Sertifikater",
             "no1": "Norsk språk – A2/B1",
-            "no2": "Seks måneders intensivkurs"
+            "no2": "Seks måneders intensivkurs",
+            "no3": "Trek university sertifikat",
+            "no4": "Explorer-nivået ansatt 7/7 kurs.",
+            "no5": "Guide-nivået ansatt 90/90 kurs.",
+            "no6": "Brannvernforeningen",
+            "no7": "Brannvern - Kurs i varme arbeider."
         }
     }
 }
