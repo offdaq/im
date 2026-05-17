@@ -200,14 +200,29 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /**
- * Preloader
- */
+   * Preloader: гифка выбирается inline-скриптом в index.html (одна загрузка).
+   * Здесь только таймеры скрытия.
+   */
   const preloader = document.querySelector('#preloader');
   if (preloader) {
+    const MIN_SHOW_MS = 3000;
+    const MAX_SHOW_MS = 10000;
+    const startedAt = Date.now();
+    let preloaderHidden = false;
+
+    const hidePreloader = () => {
+      if (preloaderHidden) return;
+      preloaderHidden = true;
+      preloader.style.opacity = '0';
+      setTimeout(() => preloader.remove(), 600);
+    };
+
     window.addEventListener('load', () => {
-    preloader.style.opacity = '0';
-    setTimeout(() => preloader.remove(), 600);
-  });
+      const wait = Math.max(0, MIN_SHOW_MS - (Date.now() - startedAt));
+      setTimeout(hidePreloader, wait);
+    });
+
+    setTimeout(hidePreloader, MAX_SHOW_MS);
   }
 
   /**
