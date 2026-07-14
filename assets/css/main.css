@@ -1636,13 +1636,18 @@ section,
   outline-offset: 2px;
 }
 
-.resume .resume-section .resume-item-media .company-logo,
-.resume .resume-section .resume-item .company .company-logo {
+.resume .resume-section .resume-item-media .company-logo {
   display: block;
   width: 56px;
   height: 56px;
   object-fit: contain;
   border-radius: 6px;
+  vertical-align: middle;
+}
+
+.resume .resume-section .resume-item .company .company-logo {
+  display: inline-block;
+  object-fit: contain;
   vertical-align: middle;
 }
 
